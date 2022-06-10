@@ -53,7 +53,7 @@
 
 .envelopeButton h1 {
   position: absolute;
-  font-family: 'Caveat', serif;
+  font-family: 'Caveat', 'PT Serif', serif;
   color: #3f200b;
   font-size: 50px;
   font-weight: normal;
