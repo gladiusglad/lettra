@@ -1,0 +1,110 @@
+.container {
+  margin: 0;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.letterWrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+}
+
+.envelopeWrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  user-select: none;
+}
+
+.envelope {
+  position: absolute;
+  margin: auto;
+  left: 0; 
+  right: 0; 
+  top: 0;
+  bottom: 90px;
+  filter: drop-shadow(8px -8px 4px rgba(0,0,0,0.3));
+}
+
+.envelopeButton {
+  position: absolute;
+  margin: auto;
+  width: 660px;
+  height: 365px;
+  left: 0; 
+  right: 0; 
+  top: 0;
+  bottom: -90px;
+  background: none;
+  border: none;
+}
+
+.envelopeButton h1 {
+  position: absolute;
+  font-family: 'Caveat', serif;
+  color: #3f200b;
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.envelopeTo {
+  left: 120px;
+}
+
+.letter {
+  position: absolute;
+  overflow: hidden;
+  left: 0; 
+  right: 0; 
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 60rem;
+  height: 40rem;
+  cursor: grab;
+  font-family: 'Caveat', serif;
+  color: #3f200b;
+}
+
+.letterBackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+}
+
+.letterContent {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5rem;
+  z-index: 5;
+}
+
+.letter h1 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 60px;
+  margin-bottom: 2rem;
+}
+
+.letter p {
+  font-size: 36px;
+}
+
+.letterClosing {
+  text-align: right;
+  margin-top: 2rem;
+}
