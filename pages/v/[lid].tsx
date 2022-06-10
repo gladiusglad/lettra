@@ -37,9 +37,6 @@ const Viewer: NextPage = () => {
     <div className={s.container} ref={constraintsRef}>
       <Head>
           <title>{title}</title>
-          <meta name="description" content="Create and send an e-letter for your friends and loved ones!" />
-          <link rel="icon" href="/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"></link>
       </Head>
       <div className={s.background}>
         <Image src={background} layout="fill" objectFit="cover" />
