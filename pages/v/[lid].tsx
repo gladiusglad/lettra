@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import background from '../../img/desk.jpg'
+import background from '../../img/desk.webp'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import s from '../../styles/Viewer.module.css'
