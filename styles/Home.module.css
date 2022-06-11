@@ -1,117 +1,148 @@
 .container {
-  padding: 0 2rem;
+  margin: 0;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.homeWrapper {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #eee;
 }
 
 .title {
-  margin: 0;
+  margin-bottom: 1rem;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 120px;
   font-weight: normal;
-}
-
-.title,
-.description {
+  font-family: 'Caveat', 'PT Serif', serif;
   text-align: center;
 }
 
 .description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+  text-align: center;
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 4rem;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
+.panelsWrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  align-items: center;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.writeButton, .codeTag {
+  position: relative;
+  margin: 0 6rem;
+  width: 480px;
+  height: 280px;
+  transition-duration: 0.5s;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.writeButton:hover, .codeTag:hover {
+  transform: scale(1.1);
+  transition-duration: 0.5s;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.writeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.writeButton p, .codeTag label {
+  position: relative;
+  z-index: 50;
+  color: #3f200b;
+  text-align: center;
+  font-family: 'Caveat', 'PT Serif', serif;
+  font-size: 4rem;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.writeButton p {
+  top: 10px;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.codeTag label {
+  display: block;
+  top: 40px;
+}
+
+.panelBg {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.codeInputs {
+  position: relative;
+  z-index: 50;
+  left: 200px;
+  top: 68px;
+}
+
+.codeInput {
+  color: #3f200b;
+  font-family: 'Caveat', 'PT Serif', serif;
+  font-size: 4rem;
+  width: 185px;
+  background: none;
+  border: none;
+  border-bottom: solid 5px #3f200b;
+  transition-duration: 0.2s;
+}
+
+.codeInput:hover, .codeInput:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition-duration: 0.2s;
+}
+
+.codeSubmit {
+  background: none;
+  border: none;
+  color: #3f200b;
+  font-size: 54px;
+  margin-left: 16px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.codeSubmit:hover, .codeSubmit:focus {
+  color: #c23e1d;
+  transform: scale(1.4);
+  transition-duration: 0.2s;
+}
+
+.container footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 16px;
+  align-items: center;
+  color: #eee;
 }
