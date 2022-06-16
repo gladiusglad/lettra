@@ -9,6 +9,7 @@ import tag from '../img/tag.webp'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from "next/router";
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -38,12 +39,14 @@ const Home: NextPage = () => {
           Create and send an e-letter.
         </p>
         <div className={s.panelsWrapper}>
-          <button className={s.writeButton} onMouseEnter={() => setHoveredButton(-1)} onMouseLeave={() => setHoveredButton(0)}>
-            <div className={s.panelBg}>
-              <Image src={envelope} />
-            </div>
-            <p>Write letter</p>
-          </button>
+          <Link href="/e/123123">
+            <button className={s.writeButton} onMouseEnter={() => setHoveredButton(-1)} onMouseLeave={() => setHoveredButton(0)}>
+              <div className={s.panelBg}>
+                <Image src={envelope} />
+              </div>
+              <p>Write letter</p>
+            </button>
+          </Link>
           <motion.div animate={{ rotate: hoveredButton * -10, transition: { ease: 'easeOut' } }}>
             <Image src={pen} width={50} height={500} />
           </motion.div>

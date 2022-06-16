@@ -73,7 +73,6 @@
   margin: auto;
   width: 60rem;
   height: 40rem;
-  cursor: grab;
   font-family: 'Caveat', serif;
   color: #3f200b;
 }
@@ -85,26 +84,59 @@
   z-index: 4;
 }
 
-.letterContent {
+.letterContainer {
   position: absolute;
   height: 100%;
   width: 100%;
-  padding: 5rem;
+  padding: 40px;
+}
+
+.letterContent {
+  position: relative;
+  height: 100%;
+  width: 100%;
   z-index: 5;
 }
 
-.letter h1 {
+.titleElement {
+  position: absolute;
   text-align: center;
   font-weight: normal;
   font-size: 60px;
-  margin-bottom: 2rem;
-}
-
-.letter p {
-  font-size: 36px;
 }
 
 .letterClosing {
   text-align: right;
   margin-top: 2rem;
+}
+
+/* EDITOR */
+
+.paperStack {
+  position: absolute;
+  overflow: hidden;
+  left: 0; 
+  right: 0; 
+  top: -10rem;
+  margin: auto;
+  width: 36rem;
+  height: 24rem;
+}
+
+.element {
+  position: absolute;
+  outline: none;
+  overflow: hidden;
+}
+
+.editorElement:focus, .editorElement:hover {
+  outline: #c23e1d solid 2px;
+}
+
+.textElement {
+  word-break: break-all;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 36px;
 }
