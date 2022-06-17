@@ -38,9 +38,17 @@ export default function EditorPage({ pageNumber, page, s, letter, setLetter }: E
           switch (e.type) {
             case 'text':
               if (pageNumber === 0 && i === 0) {
-                return <EditorTextElement key={i} e={e} s={s} modifyLetter={(e) => modifyLetterElement(i, e)} onBlur={modifyLetterTitle} />
+                return <EditorTextElement key={i} 
+                  e={e} 
+                  s={s} 
+                  modifyLetter={(e) => modifyLetterElement(i, e)} 
+                  onBlur={modifyLetterTitle} 
+                  tagName="h1" />
               } else {
-                return <EditorTextElement key={i} e={e} s={s} modifyLetter={(e) => modifyLetterElement(i, e)} />
+                return <EditorTextElement key={i} 
+                e={e} 
+                s={s} 
+                modifyLetter={(e) => modifyLetterElement(i, e)} />
               }
             default:
               return <div></div>

@@ -6,10 +6,11 @@ interface EditorTextElementProps {
   e: TextElement,
   s: {[key: string] : string},
   modifyLetter: (modifyElement: ((element: LetterElement) => boolean)) => void,
-  onBlur?: FocusEventHandler<HTMLDivElement>
+  onBlur?: FocusEventHandler<HTMLDivElement>,
+  tagName?: string
 }
 
-export default function EditorTextElement({e, s, modifyLetter, onBlur}: EditorTextElementProps) {
+export default function EditorTextElement({e, s, modifyLetter, onBlur, tagName}: EditorTextElementProps) {
   const setText = (event: ContentEditableEvent) => {
     modifyLetter((element) => {
       if (element.type === 'text') {
@@ -31,7 +32,7 @@ export default function EditorTextElement({e, s, modifyLetter, onBlur}: EditorTe
       }}
       className={`${s.element} ${s.editorElement}`}
     >
-      <ContentEditable html={e.text} onChange={setText} tagName='p' className={s.textElement} onBlur={onBlur} />
+      <ContentEditable html={e.text} onChange={setText} tagName={tagName || 'p'} className={s.textElement} onBlur={onBlur} />
     </div>
   )
 }
