@@ -6,13 +6,13 @@ import { Letter } from '../pages/v/[lid]'
 const focusIndex = 20000, discardIndex = 10000
 
 interface LetterPagesProps {
-  opened: boolean,
-  letter: Letter,
-  constraintsRef: MutableRefObject<null>,
+  opened: boolean
+  letter: Letter
+  constraintsRef: MutableRefObject<null>
   s: {[key: string] : string}
 }
 
-export default function LetterPages({ opened, letter, constraintsRef, s }: LetterPagesProps) {
+const LetterPages = ({ opened, letter, constraintsRef, s }: LetterPagesProps) => {
   const [animationEnded, setAnimationEnded] = useState(false)
   const [zIndexes, setZIndexes] = useState(letter.pages.map(p => focusIndex + letter.pages.length - p.id))
 
@@ -53,3 +53,5 @@ export default function LetterPages({ opened, letter, constraintsRef, s }: Lette
     </motion.div>
   )
 }
+
+export default LetterPages

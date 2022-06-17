@@ -9,9 +9,9 @@ import Envelope from '../../components/envelope'
 import LetterPages from '../../components/letter-pages'
 
 export interface Letter {
-  title: string,
-  to: string,
-  from: string,
+  title: string
+  to: string
+  from: string
   pages: { id: number, text: string }[]
 }
 

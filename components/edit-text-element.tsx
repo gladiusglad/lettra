@@ -3,15 +3,15 @@ import ContentEditable, { ContentEditableEvent } from "react-contenteditable"
 import { Letter, LetterElement, TextElement } from "../pages/e/[eid]"
 
 interface EditorTextElementProps {
-  e: TextElement,
-  s: {[key: string] : string},
-  modifyLetter: (modifyElement: ((element: LetterElement) => boolean)) => void,
-  onBlur?: FocusEventHandler<HTMLDivElement>,
-  tagName?: string,
+  e: TextElement
+  s: {[key: string] : string}
+  modifyLetter: (modifyElement: ((element: LetterElement) => boolean)) => void
+  onBlur?: FocusEventHandler<HTMLDivElement>
+  tagName?: string
   singleLine?: boolean
 }
 
-export default function EditorTextElement({e, s, modifyLetter, onBlur, tagName='p', singleLine}: EditorTextElementProps) {
+const EditorTextElement = ({e, s, modifyLetter, onBlur, tagName='p', singleLine}: EditorTextElementProps) => {
   const setText = (event: ContentEditableEvent) => {
     modifyLetter((element) => {
       if (element.type === 'text') {
@@ -42,3 +42,5 @@ export default function EditorTextElement({e, s, modifyLetter, onBlur, tagName='
     </div>
   )
 }
+
+export default EditorTextElement

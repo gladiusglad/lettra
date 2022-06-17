@@ -5,14 +5,14 @@ import { FocusEventHandler, FormEvent } from 'react'
 import EditorTextElement from './edit-text-element'
 
 interface EditorPageProps {
-  pageNumber: number,
-  page: Page,
-  s: {[key: string] : string},
-  letter: Letter,
+  pageNumber: number
+  page: Page
+  s: {[key: string] : string}
+  letter: Letter
   setLetter: (letter: Letter) => void
 }
 
-export default function EditorPage({ pageNumber, page, s, letter, setLetter }: EditorPageProps) {
+const EditorPage = ({ pageNumber, page, s, letter, setLetter }: EditorPageProps) => {
   const modifyLetterElement = (elementId: number, modifyElement: (element: LetterElement) => boolean) => {
     const l = {...letter}
     const element = l.pages[pageNumber].elements[elementId]
@@ -60,3 +60,5 @@ export default function EditorPage({ pageNumber, page, s, letter, setLetter }: E
     </div>
   )
 }
+
+export default EditorPage

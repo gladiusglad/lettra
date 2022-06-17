@@ -5,22 +5,22 @@ import { MutableRefObject, useEffect, useState } from 'react'
 import { Letter } from '../pages/v/[lid]'
 
 interface LetterProps {
-  opened: boolean,
-  page: number,
-  letter: Letter,
-  active: boolean,
-  zIndex: number,
-  activate: () => void,
-  discard: () => void,
-  onAnimationEnd: () => void,
-  constraintsRef: MutableRefObject<null>,
+  opened: boolean
+  page: number
+  letter: Letter
+  active: boolean
+  zIndex: number
+  activate: () => void
+  discard: () => void
+  onAnimationEnd: () => void
+  constraintsRef: MutableRefObject<null>
   s: {[key: string] : string}
 }
 
 const floatFilter = 'drop-shadow(100px -100px 10px rgba(0,0,0,0.2))'
 const putFilter = 'drop-shadow(5px -5px 3px rgba(0,0,0,0.3))'
 
-export default function LetterPage({ opened, page, letter, active, zIndex, activate, discard, onAnimationEnd, constraintsRef, s }: LetterProps) {
+const LetterPage = ({ opened, page, letter, active, zIndex, activate, discard, onAnimationEnd, constraintsRef, s }: LetterProps) => {
   const [focusPage, setFocusPage] = useState(true)
   const x = useMotionValue(0)
   const controls = useAnimation()
@@ -113,3 +113,5 @@ export default function LetterPage({ opened, page, letter, active, zIndex, activ
     </motion.div>
   )
 }
+
+export default LetterPage

@@ -4,15 +4,15 @@ import { useEffect, useState } from 'react'
 import { Letter } from '../pages/v/[lid]'
 
 interface EnvelopeProps {
-  letter: Letter,
-  s: {[key: string] : string},
-  opened: boolean,
+  letter: Letter
+  s: {[key: string] : string}
+  opened: boolean
   onOpen: () => void
 }
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false })
 
-export default function Envelope({ letter, s, opened, onOpen }: EnvelopeProps) {
+const Envelope = ({ letter, s, opened, onOpen }: EnvelopeProps) => {
   const [playing, setPlaying] = useState(false)
   const [behind, setBehind] = useState(false)
   useEffect(() => {
@@ -42,3 +42,5 @@ export default function Envelope({ letter, s, opened, onOpen }: EnvelopeProps) {
     </motion.div>
   )
 }
+
+export default Envelope

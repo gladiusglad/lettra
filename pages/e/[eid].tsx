@@ -10,24 +10,24 @@ import EditorPage from "../../components/editor-page"
 import CSS from 'csstype'
 
 export interface Letter {
-  uuid: string,
-  code?: string,
-  theme: string,
-  title: string,
-  to: string,
-  date: Date,
+  uuid: string
+  code?: string
+  theme: string
+  title: string
+  to: string
+  date: Date
   pages: Page[]
 }
 
 interface ElementCore {
-  x: number,
-  y: number,
-  width: number,
-  height: number,
+  x: number
+  y: number
+  width: number
+  height: number
   rotation: number
 }
 
-type SVGElement = ElementCore & {
+export type SVGElement = ElementCore & {
   type: 'svg'
   svg: string
 }
