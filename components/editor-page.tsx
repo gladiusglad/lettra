@@ -13,10 +13,13 @@ interface EditorPageProps {
 }
 
 const EditorPage = ({ pageNumber, page, s, letter, setLetter }: EditorPageProps) => {
-  const modifyLetterElement = (elementId: number, modifyElement: (element: LetterElement) => boolean) => {
+  const modifyLetterElement = (elementId: number, modifyElement: (element: LetterElement) => LetterElement | null) => {
     const l = {...letter}
     const element = l.pages[pageNumber].elements[elementId]
-    if (modifyElement(element)) {
+    const modifiedElement = modifyElement(element)
+
+    if (modifiedElement) {
+      l.pages[pageNumber].elements[elementId] = modifiedElement
       setLetter(l)
     }
   }

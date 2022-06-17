@@ -5,7 +5,7 @@ import { Letter, LetterElement, TextElement } from "../pages/e/[eid]"
 interface EditorTextElementProps {
   e: TextElement
   s: {[key: string] : string}
-  modifyLetter: (modifyElement: ((element: LetterElement) => boolean)) => void
+  modifyLetter: (modifyElement: ((element: LetterElement) => LetterElement | null)) => void
   onBlur?: FocusEventHandler<HTMLDivElement>
   tagName?: string
   singleLine?: boolean
@@ -15,11 +15,11 @@ const EditorTextElement = ({e, s, modifyLetter, onBlur, tagName='p', singleLine}
   const setText = (event: ContentEditableEvent) => {
     modifyLetter((element) => {
       if (element.type === 'text') {
-        element.text = event.target.value
-        console.log(element.text)
-        return true
+        const modifiedElement = {...element}
+        modifiedElement.text = event.target.value
+        return modifiedElement
       }
-      return false
+      return null
     })
   }
   
