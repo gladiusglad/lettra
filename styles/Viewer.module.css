@@ -134,10 +134,20 @@
 }
 
 .textElement {
+  display: inline-block;
   word-break: break-all;
   height: 100%;
   width: 100%;
   outline: none;
   font-size: 36px;
   font-weight: normal;
+}
+
+.singleLine {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.singleLine br {
+  display: none;
 }

@@ -43,7 +43,8 @@ export default function EditorPage({ pageNumber, page, s, letter, setLetter }: E
                   s={s} 
                   modifyLetter={(e) => modifyLetterElement(i, e)} 
                   onBlur={modifyLetterTitle} 
-                  tagName="h1" />
+                  tagName="h1"
+                  singleLine />
               } else {
                 return <EditorTextElement key={i} 
                 e={e} 
